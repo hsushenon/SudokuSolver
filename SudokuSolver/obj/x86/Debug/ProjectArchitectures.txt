@@ -1,0 +1,1 @@
+D:\Raymond\Projects\SudokuSolver\SudokuSolver\SudokuSolver.csproj;x86
