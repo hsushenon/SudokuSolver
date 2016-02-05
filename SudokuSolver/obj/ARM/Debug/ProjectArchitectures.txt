@@ -1,0 +1,1 @@
+C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\SudokuSolver.csproj;arm

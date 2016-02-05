@@ -5,63 +5,44 @@
     xmlns:local="using:SudokuSolver"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" 
+    >
     <Page.Resources>
         <Style TargetType="TextBox" x:Key="MyTextBoxStyle">
             <Setter Property="Background" Value="LightGray" />
             <Setter Property="FontFamily" Value="Arial Black" />
             <Setter Property="FontSize" Value="14" />
-            <Setter  Property="BorderBrush" Value="Gray"></Setter>
-            <Setter  Property="BorderThickness" Value="1"></Setter>
+            <Setter Property="BorderBrush" Value="Gray"></Setter>
+            <Setter Property="BorderThickness" Value="1"></Setter>
             <Setter Property="TextAlignment" Value="Center" />
         </Style>
-        <Style TargetType="TextBox" x:Key="MyTextBoxLeftStyle">
-        <Setter Property="Background" Value="LightGray" />
-        <Setter Property="FontFamily" Value="Arial Black" />
-        <Setter Property="FontSize" Value="14" />
-        <Setter  Property="BorderBrush" Value="Gray"></Setter>
-        <Setter  Property="BorderThickness" Value="3,1,1,1"></Setter>
-            <Setter Property="TextAlignment" Value="Center" />
 
-        </Style>
-        <Style TargetType="TextBox" x:Key="MyTextBoxTopStyle">
-            <Setter Property="Background" Value="LightGray" />
-            <Setter Property="FontFamily" Value="Arial Black" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter  Property="BorderBrush" Value="Gray"></Setter>
-            <Setter  Property="BorderThickness" Value="1,3,1,1"></Setter>
-            <Setter Property="TextAlignment" Value="Center" />
-
-        </Style>
-        <Style TargetType="TextBox" x:Key="MyTextBoxRightStyle">
-            <Setter Property="Background" Value="LightGray" />
-            <Setter Property="FontFamily" Value="Arial Black" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter  Property="BorderBrush" Value="Gray"></Setter>
-            <Setter  Property="BorderThickness" Value="1,1,3,1"></Setter>
-            <Setter Property="TextAlignment" Value="Center" />
-        </Style>
         <Style  TargetType="Button"  x:Key="MyButtonStyle">
-            <Setter  Property="Background" Value="Black"></Setter>
-            <Setter  Property="Foreground" Value="White"></Setter>
-            <Setter  Property="HorizontalAlignment" Value="Stretch"></Setter>
-            <Setter  Property="VerticalAlignment" Value="Stretch"></Setter>
+            <Setter  Property="Background" Value="LightGray"></Setter>
+            <Setter  Property="Foreground" Value="Black"></Setter>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="550" />
+            <!--<Setter  Property="HorizontalAlignment" Value="Stretch"></Setter>
+            <Setter  Property="VerticalAlignment" Value="Stretch"></Setter>-->
             <Setter  Property="BorderBrush" Value="Gray"></Setter>
             <Setter  Property="BorderThickness" Value="2"></Setter>
         </Style>
-        
+
+        <Style  TargetType="Grid"  x:Key="MyGridStyle">
+
+        </Style>
     </Page.Resources>
-    
 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button Content="Solve" Style="{StaticResource MyButtonStyle}"  ></Button>
-      
-        <Grid Name="gridMain" Grid.Row="2">
+        <Button Name="btnSolve" Content="Solve" Style="{StaticResource MyButtonStyle}" Click="btnSolve_Click"  ></Button>
+        <TextBlock Name="tbMessage" Grid.Row="2"   Text="Fill the Sudoku"></TextBlock>
+        <Grid Name="gridMain" Grid.Row="3" Style="{StaticResource MyGridStyle}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -72,7 +53,7 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-             </Grid.RowDefinitions>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
@@ -84,97 +65,96 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBox Name="txtR1C1" Grid.Row="0" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
-            <TextBox Name="txtR1C2" Grid.Row="0" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR1C3" Grid.Row="0" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" />
-            <TextBox Name="txtR1C4" Grid.Row="0" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR1C5" Grid.Row="0" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR1C6" Grid.Row="0" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR1C7" Grid.Row="0" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR1C8" Grid.Row="0" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR1C9" Grid.Row="0" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR1C1" Grid.Row="0" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,3,1,1" />
+            <TextBox Name="txtR1C2" Grid.Row="0" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR1C3" Grid.Row="0" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,3,1"/>
+            <TextBox Name="txtR1C4" Grid.Row="0" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR1C5" Grid.Row="0" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR1C6" Grid.Row="0" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,3,1"/>
+            <TextBox Name="txtR1C7" Grid.Row="0" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR1C8" Grid.Row="0" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR1C9" Grid.Row="0" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,3,1"/>
 
-            <TextBox Name="txtR2C1" Grid.Row="1" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
+            <TextBox Name="txtR2C1" Grid.Row="1" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR2C2" Grid.Row="1" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR2C3" Grid.Row="1" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" />
-            <TextBox Name="txtR2C4" Grid.Row="1" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
+            <TextBox Name="txtR2C3" Grid.Row="1" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,3,1" />
+            <TextBox Name="txtR2C4" Grid.Row="1" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR2C5" Grid.Row="1" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR2C6" Grid.Row="1" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR2C7" Grid.Row="1" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
+            <TextBox Name="txtR2C6" Grid.Row="1" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,3,1"/>
+            <TextBox Name="txtR2C7" Grid.Row="1" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR2C8" Grid.Row="1" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR2C9" Grid.Row="1" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR2C9" Grid.Row="1" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,3,1"/>
 
-            <TextBox Name="txtR3C1" Grid.Row="2" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
-            <TextBox Name="txtR3C2" Grid.Row="2" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR3C3" Grid.Row="2" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" />
-            <TextBox Name="txtR3C4" Grid.Row="2" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR3C5" Grid.Row="2" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR3C6" Grid.Row="2" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR3C7" Grid.Row="2" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR3C8" Grid.Row="2" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR3C9" Grid.Row="2" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR3C1" Grid.Row="2" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR3C2" Grid.Row="2" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR3C3" Grid.Row="2" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,3,3"/>
+            <TextBox Name="txtR3C4" Grid.Row="2" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR3C5" Grid.Row="2" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR3C6" Grid.Row="2" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,3,3"/>
+            <TextBox Name="txtR3C7" Grid.Row="2" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR3C8" Grid.Row="2" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR3C9" Grid.Row="2" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,1,3,3"/>
 
-            <TextBox Name="txtR4C1" Grid.Row="3" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
-            <TextBox Name="txtR4C2" Grid.Row="3" Grid.Column="1"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR4C3" Grid.Row="3" Grid.Column="2"  Style="{StaticResource MyTextBoxTopStyle}" />
-            <TextBox Name="txtR4C4" Grid.Row="3" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR4C5" Grid.Row="3" Grid.Column="4"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR4C6" Grid.Row="3" Grid.Column="5"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR4C7" Grid.Row="3" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR4C8" Grid.Row="3" Grid.Column="7"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR4C9" Grid.Row="3" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR4C1" Grid.Row="3" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR4C2" Grid.Row="3" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR4C3" Grid.Row="3" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,3,1"/>
+            <TextBox Name="txtR4C4" Grid.Row="3" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR4C5" Grid.Row="3" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR4C6" Grid.Row="3" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,3,1"/>
+            <TextBox Name="txtR4C7" Grid.Row="3" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR4C8" Grid.Row="3" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR4C9" Grid.Row="3" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}" BorderThickness="1,3,3,1"/>
 
-            <TextBox Name="txtR5C1" Grid.Row="4" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
-            <TextBox Name="txtR5C2" Grid.Row="4" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR5C3" Grid.Row="4" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" />
-            <TextBox Name="txtR5C4" Grid.Row="4" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
+            <TextBox Name="txtR5C1" Grid.Row="4" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,1"/>
+            <TextBox Name="txtR5C2" Grid.Row="4" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}" />
+            <TextBox Name="txtR5C3" Grid.Row="4" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,1"/>
+            <TextBox Name="txtR5C4" Grid.Row="4" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR5C5" Grid.Row="4" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR5C6" Grid.Row="4" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR5C7" Grid.Row="4" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
+            <TextBox Name="txtR5C6" Grid.Row="4" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,1"/>
+            <TextBox Name="txtR5C7" Grid.Row="4" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR5C8" Grid.Row="4" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR5C9" Grid.Row="4" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR5C9" Grid.Row="4" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,1"/>
 
-            <TextBox Name="txtR6C1" Grid.Row="5" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
-            <TextBox Name="txtR6C2" Grid.Row="5" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR6C3" Grid.Row="5" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" />
-            <TextBox Name="txtR6C4" Grid.Row="5" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR6C5" Grid.Row="5" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR6C6" Grid.Row="5" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR6C7" Grid.Row="5" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR6C8" Grid.Row="5" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR6C9" Grid.Row="5" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR6C1" Grid.Row="5" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR6C2" Grid.Row="5" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR6C3" Grid.Row="5" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,3"/>
+            <TextBox Name="txtR6C4" Grid.Row="5" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR6C5" Grid.Row="5" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR6C6" Grid.Row="5" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,3"/>
+            <TextBox Name="txtR6C7" Grid.Row="5" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR6C8" Grid.Row="5" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR6C9" Grid.Row="5" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,3"/>
 
-            <TextBox Name="txtR7C1" Grid.Row="6" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
-            <TextBox Name="txtR7C2" Grid.Row="6" Grid.Column="1"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR7C3" Grid.Row="6" Grid.Column="2"  Style="{StaticResource MyTextBoxTopStyle}" />
-            <TextBox Name="txtR7C4" Grid.Row="6" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR7C5" Grid.Row="6" Grid.Column="4"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR7C6" Grid.Row="6" Grid.Column="5"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR7C7" Grid.Row="6" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR7C8" Grid.Row="6" Grid.Column="7"  Style="{StaticResource MyTextBoxTopStyle}"/>
-            <TextBox Name="txtR7C9" Grid.Row="6" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR7C1" Grid.Row="6" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR7C2" Grid.Row="6" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR7C3" Grid.Row="6" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,3,3,1"/>
+            <TextBox Name="txtR7C4" Grid.Row="6" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR7C5" Grid.Row="6" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR7C6" Grid.Row="6" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,3,3,1"/>
+            <TextBox Name="txtR7C7" Grid.Row="6" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,3,1,1"/>
+            <TextBox Name="txtR7C8" Grid.Row="6" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,3,1,1"/>
+            <TextBox Name="txtR7C9" Grid.Row="6" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,3,3,1"/>
 
-            <TextBox Name="txtR8C1" Grid.Row="7" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
+            <TextBox Name="txtR8C1" Grid.Row="7" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR8C2" Grid.Row="7" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR8C3" Grid.Row="7" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" />
-            <TextBox Name="txtR8C4" Grid.Row="7" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
+            <TextBox Name="txtR8C3" Grid.Row="7" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,1" />
+            <TextBox Name="txtR8C4" Grid.Row="7" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR8C5" Grid.Row="7" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR8C6" Grid.Row="7" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR8C7" Grid.Row="7" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
+            <TextBox Name="txtR8C6" Grid.Row="7" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,1"/>
+            <TextBox Name="txtR8C7" Grid.Row="7" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,1"/>
             <TextBox Name="txtR8C8" Grid.Row="7" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR8C9" Grid.Row="7" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
+            <TextBox Name="txtR8C9" Grid.Row="7" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,1"/>
 
-            <TextBox Name="txtR9C1" Grid.Row="8" Grid.Column="0"  Style="{StaticResource MyTextBoxLeftStyle}" />
-            <TextBox Name="txtR9C2" Grid.Row="8" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR9C3" Grid.Row="8" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}" />
-            <TextBox Name="txtR9C4" Grid.Row="8" Grid.Column="3"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR9C5" Grid.Row="8" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR9C6" Grid.Row="8" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR9C7" Grid.Row="8" Grid.Column="6"  Style="{StaticResource MyTextBoxLeftStyle}"/>
-            <TextBox Name="txtR9C8" Grid.Row="8" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"/>
-            <TextBox Name="txtR9C9" Grid.Row="8" Grid.Column="8"  Style="{StaticResource MyTextBoxRightStyle}"/>
-
+            <TextBox Name="txtR9C1" Grid.Row="8" Grid.Column="0"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,3" />
+            <TextBox Name="txtR9C2" Grid.Row="8" Grid.Column="1"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR9C3" Grid.Row="8" Grid.Column="2"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,3"/>
+            <TextBox Name="txtR9C4" Grid.Row="8" Grid.Column="3"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR9C5" Grid.Row="8" Grid.Column="4"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR9C6" Grid.Row="8" Grid.Column="5"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,3"/>
+            <TextBox Name="txtR9C7" Grid.Row="8" Grid.Column="6"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="3,1,1,3"/>
+            <TextBox Name="txtR9C8" Grid.Row="8" Grid.Column="7"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,1,3"/>
+            <TextBox Name="txtR9C9" Grid.Row="8" Grid.Column="8"  Style="{StaticResource MyTextBoxStyle}"  BorderThickness="1,1,3,3"/>
         </Grid>
-        
+
     </Grid>
 </Page>

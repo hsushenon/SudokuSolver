@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>3fd5fe09-4918-4b12-81d5-ad822f68f748</PackageIdentityName>
-    <IntermediateOutputPath>D:\Raymond\Projects\SudokuSolver\SudokuSolver\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\obj\x86\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>7F8F2FB4E36CA07684F55491B666966C833E5A941FD0CB6FDD1E15E6F39513BC</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>3fd5fe09-4918-4b12-81d5-ad822f68f748_1.0.0.0_x86__v52bfwc2c21ha</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>3fd5fe09-4918-4b12-81d5-ad822f68f748_v52bfwc2c21ha!App</RegisteredUserModeAppID>
@@ -19,16 +19,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-01-21T12:27:28.819</Modified>
+      <Modified>2016-02-05T10:50:18.309</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\bin\x86\Debug\SudokuSolver.exe">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\bin\x86\Debug\SudokuSolver.exe">
       <PackagePath>entrypoint\SudokuSolver.exe</PackagePath>
-      <Modified>2016-01-21T12:27:27.742</Modified>
+      <Modified>2016-02-05T10:50:17.791</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\dotnet\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -454,63 +454,67 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2015-12-15T13:30:12.226</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
-      <Modified>2016-01-21T11:01:16.158</Modified>
+      <Modified>2016-02-05T07:19:40.191</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Original code\sudoku06.c">
+      <PackagePath>Original code\sudoku06.c</PackagePath>
+      <Modified>2016-02-05T10:20:09.470</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-01-21T11:01:01.812</Modified>
+      <Modified>2016-02-05T07:19:40.213</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-10-10T15:39:42.000</Modified>
+      <Modified>2016-02-05T07:19:40.192</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T15:39:42.000</Modified>
+      <Modified>2016-02-05T07:19:40.194</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T15:39:42.000</Modified>
+      <Modified>2016-02-05T07:19:40.196</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T15:39:42.000</Modified>
+      <Modified>2016-02-05T07:19:40.197</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T15:39:42.000</Modified>
+      <Modified>2016-02-05T07:19:40.199</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T15:39:42.000</Modified>
+      <Modified>2016-02-05T07:19:40.200</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-10-10T15:39:42.000</Modified>
+      <Modified>2016-02-05T07:19:40.201</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\bin\x86\Debug\SudokuSolver.xr.xml">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\bin\x86\Debug\SudokuSolver.xr.xml">
       <PackagePath>SudokuSolver.xr.xml</PackagePath>
-      <Modified>2016-01-21T12:20:15.658</Modified>
+      <Modified>2016-02-05T10:21:59.162</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2015-12-07T05:38:46.922</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-01-21T12:27:28.546</Modified>
+      <Modified>2016-02-05T10:30:28.727</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Raymond\Projects\SudokuSolver\SudokuSolver\bin\x86\Debug\Core\SudokuSolver.exe">
+    <AppxPackagedFile Include="C:\Users\dotnet\Documents\GitHub\SudokuSolver\SudokuSolver\bin\x86\Debug\Core\SudokuSolver.exe">
       <PackagePath>SudokuSolver.exe</PackagePath>
-      <Modified>2016-01-21T12:27:28.817</Modified>
+      <Modified>2016-02-05T10:50:18.299</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
